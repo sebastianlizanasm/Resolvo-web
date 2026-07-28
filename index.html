@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resolvo — Página en mantención</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #10151c;
+    overflow: hidden;
+  }
+
+  .bg-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(35%) brightness(0.55);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(16,21,28,0.75) 0%, rgba(16,21,28,0.55) 45%, rgba(16,21,28,0.9) 100%);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 32px;
+    max-width: 620px;
+  }
+
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    color: #f2ede4;
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  p.sub {
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    color: #c9cdd3;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .divider {
+    width: 44px;
+    height: 2px;
+    background: #c98a3e;
+    margin: 28px auto;
+    border-radius: 2px;
+  }
+
+  .team-photo {
+    display: block;
+    margin: 34px auto 0;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .content { animation: rise 0.9s ease-out; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <img class="bg-photo" src="https://picsum.photos/id/1044/1920/1280" alt="">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="brand">RESOLVO</div>
+      <h1>Página en mantención</h1>
+      <div class="divider"></div>
+      <p class="sub">Estamos trabajando para mejorar tu experiencia. Vuelve pronto.</p>
+      <img class="team-photo" src="foto-equipo.png" alt="Equipo Resolvo">
+    </div>
+  </div>
+</body>
+</html>
