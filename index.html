@@ -89,13 +89,15 @@
   .nav-cta{
     padding: 9px 18px;
     background: var(--accent);
-    color: #05070c;
-    font-weight: 600;
+    color: #ffffff;
+    font-weight: 700;
     font-size: 0.88rem;
     border-radius: 999px;
     transition: background .15s ease, transform .15s ease;
   }
-  .nav-cta:hover{ background: var(--accent-bright); transform: translateY(-1px); color:#05070c; }
+  .nav-cta:hover{ background: var(--accent-bright); transform: translateY(-1px); color:#ffffff; }
+  .nav-links a.active{ color: var(--accent-bright); }
+  .nav-links a.nav-cta.active{ color: #ffffff; }
   .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding: 4px; }
   .nav-toggle svg{ stroke: var(--text); }
 
@@ -325,7 +327,7 @@
 <header>
   <nav class="wrap">
     <a class="brand" href="#top">
-      <img src="assets/logo-circulo.png" alt="Resolvo">
+      <img src="logo-circulo.png" alt="Resolvo">
       <span>Resolvo</span>
     </a>
     <div class="nav-links" id="navLinks">
@@ -508,7 +510,7 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#top">
-      <img src="assets/logo-circulo.png" alt="Resolvo" style="width:24px;height:24px;">
+      <img src="logo-circulo.png" alt="Resolvo" style="width:24px;height:24px;">
       <span>Resolvo</span>
     </a>
     <p>© 2026 Resolvo. Todos los derechos reservados.</p>
@@ -524,6 +526,28 @@
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => navLinks.classList.remove('open'));
   });
+
+  // Scroll-spy: resalta el link del menú según la sección visible
+  const sections = ['inicio', 'nosotros', 'servicios', 'contacto']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+  const linkMap = {};
+  navLinks.querySelectorAll('a[href^="#"]').forEach(a => {
+    linkMap[a.getAttribute('href').slice(1)] = a;
+  });
+
+  const setActive = (id) => {
+    Object.values(linkMap).forEach(a => a.classList.remove('active'));
+    if (linkMap[id]) linkMap[id].classList.add('active');
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(sec => observer.observe(sec));
 </script>
 
 </body>
