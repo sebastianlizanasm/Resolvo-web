@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<!--
+  RESOLVO — Sitio web (index.html)
+  Última actualización: en desarrollo activo.
+  Estructura de la página (buscar por estos comentarios):
+    - # Sección: Header / Navegación
+    - # Sección: Banner de oficina
+    - # Sección: Hero (Inicio)
+    - # Sección: Sobre nosotros
+    - # Sección: Servicios (outsourcing)
+    - # Sección: Asesorías
+    - # Sección: Contacto (formulario conectado a Formspree)
+    - # Sección: Footer
+  Ver también /resolvo-contenido-web.md para el detalle de contenido y decisiones de diseño.
+-->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -9,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
+  /* Tokens de color y tipografía de la marca Resolvo (tema claro) */
   :root{
     --bg: #ffffff;
     --bg-elevated: #f4f6fa;
@@ -64,21 +79,12 @@
     outline-offset: 3px;
   }
 
-  /* ---------- NAV ---------- */
+  /* ---------- # Sección: Header / Navegación (siempre oscuro, aunque el resto del sitio sea claro) ---------- */
   header{
     position: sticky; top: 0; z-index: 50;
-    background: rgba(10,14,22,0.9);
+    background: rgba(10,14,22,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #212838;
-    color: #edeff4;
-  }
-  header .brand span{ color: #edeff4; }
-  header .nav-links a{ color: #ffffff; }
-  header .nav-links a:hover{ color: #edeff4; }
-  header .nav-links a.active{ color: #7ba3ff; }
-  header .nav-toggle svg{ stroke: #edeff4; }
-  @media (max-width: 780px){
-    header .nav-links{ background: #0a0e16; }
   }
   nav{
     display: flex; align-items: center; justify-content: space-between;
@@ -91,10 +97,11 @@
     font-weight: 800;
     font-size: 1.15rem;
     letter-spacing: -0.02em;
+    color: #edeff4;
   }
   .nav-links{ display: flex; align-items: center; gap: 32px; font-size: 0.92rem; font-weight: 500; }
-  .nav-links a{ color: var(--text-muted); transition: color .15s ease; }
-  .nav-links a:hover{ color: var(--text); }
+  .nav-links a{ color: #ffffff; transition: color .15s ease; }
+  .nav-links a:hover{ color: #97a0b3; }
   .nav-cta{
     padding: 9px 18px;
     background: var(--accent);
@@ -108,12 +115,12 @@
   .nav-links a.active{ color: var(--accent-bright); }
   .nav-links a.nav-cta.active{ color: #ffffff; }
   .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding: 4px; }
-  .nav-toggle svg{ stroke: var(--text); }
+  .nav-toggle svg{ stroke: #edeff4; }
 
   @media (max-width: 780px){
     .nav-links{
       position: fixed; inset: 64px 0 0 0;
-      background: var(--bg);
+      background: #0a0e16;
       flex-direction: column;
       align-items: flex-start;
       padding: 32px 28px;
@@ -142,7 +149,7 @@
     .office-banner{ height: 170px; }
   }
 
-  /* ---------- HERO ---------- */
+  /* ---------- # Sección: Hero (Inicio) — incluye el diagrama hub con las 6 áreas ---------- */
   .hero{
     padding: 96px 0 80px;
     display: grid;
@@ -234,7 +241,7 @@
     width: 100%;
     background: var(--brand-navy);
     padding: 14px 0;
-    margin-bottom: 56px;
+    margin-bottom: 32px;
     text-align: left;
   }
   .section-banner .wrap{ padding: 0 28px; }
@@ -247,6 +254,7 @@
     color: #ffffff;
   }
   .section-head{ max-width: 640px; margin-bottom: 24px; }
+  #servicios .section-head{ max-width: none; }
   .section-head h2{
     font-size: clamp(1.7rem, 2.8vw, 2.3rem);
     font-weight: 700;
@@ -254,7 +262,7 @@
   }
   .section-head p{ color: var(--text-muted); margin-top: 14px; font-size: 1.02rem; }
 
-  /* ---------- SOBRE NOSOTROS ---------- */
+  /* ---------- # Sección: Sobre nosotros ---------- */
   .about-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -273,7 +281,7 @@
   }
   @media (max-width: 900px){ .about-grid{ grid-template-columns: 1fr; gap: 30px; } }
 
-  /* ---------- SERVICIOS ---------- */
+  /* ---------- # Sección: Servicios (outsourcing — ejecución directa por Resolvo) ---------- */
   .services-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -288,30 +296,61 @@
     transition: border-color .15s ease, transform .15s ease;
   }
   .service-card:hover{ border-color: var(--accent); transform: translateY(-2px); }
+  .service-card .title-row{ display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
   .service-card .dot{
     width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent-bright);
-    box-shadow: 0 0 10px var(--accent-bright);
-    margin-bottom: 16px;
+    background: var(--brand-navy);
+    flex-shrink: 0;
   }
-  .service-card h3{ font-size: 1.12rem; font-weight: 700; margin-bottom: 10px; }
+  .service-card h3{ font-size: 1.12rem; font-weight: 700; margin: 0; }
   .service-card p{ color: var(--text-muted); font-size: 0.95rem; margin: 0; text-align: justify; }
   @media (max-width: 780px){ .services-grid{ grid-template-columns: 1fr; } }
 
-  /* ---------- RUBROS ---------- */
-  .chip-row{ display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+  /* ---------- # Sección: Asesorías (orientación puntual, sin ejecución directa) — layout de 2 columnas con ilustración ---------- */
+  .asesorias-grid{
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .asesorias-art{ width: 100%; }
+  .asesorias-art svg{ width: 100%; height: auto; display: block; }
+  .asesorias-art .art-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    fill: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .asesorias-art .art-label-card{
+    font-family: 'Archivo', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+  }
+  @media (max-width: 900px){
+    .asesorias-grid{ grid-template-columns: 1fr; gap: 28px; }
+    .asesorias-art{ order: -1; max-width: 420px; margin: 0 auto; }
+    .chip-row{ flex-wrap: wrap; }
+  }
+
+  /* ---------- Burbujas ("chip") — usadas en Asesorías. Nombres de clase heredados de la antigua sección "Rubros" (ya eliminada) ---------- */
+  .chip-row{ display: flex; flex-wrap: nowrap; gap: 8px; margin-bottom: 26px; }
   .chip{
-    padding: 9px 18px;
+    padding: 9px 12px;
     border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 0.9rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
     color: var(--text);
     background: var(--bg-elevated);
+    white-space: nowrap;
   }
   .rubros-note{ color: var(--text-muted); max-width: 60ch; text-align: justify; }
   .rubros-note strong{ color: var(--text); }
 
-  /* ---------- CONTACTO ---------- */
+  /* ---------- # Sección: Contacto — formulario conectado a Formspree (endpoint mqpzzdgv) vía fetch, sin redirección ---------- */
   #contacto{ padding-bottom: 40px; }
   #contacto .section-banner{ margin-bottom: 22px; }
   .contact-grid{
@@ -357,7 +396,7 @@
 
   @media (max-width: 900px){ .contact-grid{ grid-template-columns: 1fr; gap: 34px; } }
 
-  /* ---------- FOOTER ---------- */
+  /* ---------- # Sección: Footer ---------- */
   footer{
     border-top: 1px solid var(--border);
     padding: 36px 0;
@@ -369,6 +408,7 @@
 </head>
 <body>
 
+<!-- # Sección: Header / Navegación -->
 <header>
   <nav class="wrap">
     <a class="brand" href="#top">
@@ -378,6 +418,7 @@
       <a href="#inicio">Inicio</a>
       <a href="#nosotros">Sobre nosotros</a>
       <a href="#servicios">Servicios</a>
+      <a href="#asesorias">Asesorías</a>
       <a href="#contacto" class="nav-cta">Contáctanos</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
@@ -386,13 +427,14 @@
   </nav>
 </header>
 
+<!-- # Sección: Banner de foto de oficina -->
 <div class="office-banner">
   <img src="oficina.webp" alt="Oficina de Resolvo">
 </div>
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- # Sección: Hero (Inicio) -->
   <section id="inicio" style="border-top:none;">
     <div class="wrap hero">
       <div>
@@ -408,40 +450,35 @@
       <div>
         <svg class="hub" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line class="link" x1="260" y1="260" x2="260" y2="90"/>
-          <line class="link" x1="260" y1="260" x2="392.9" y2="154.0" style="animation-delay:.08s"/>
-          <line class="link" x1="260" y1="260" x2="425.7" y2="297.8" style="animation-delay:.16s"/>
-          <line class="link" x1="260" y1="260" x2="333.8" y2="413.2" style="animation-delay:.24s"/>
-          <line class="link" x1="260" y1="260" x2="186.2" y2="413.2" style="animation-delay:.32s"/>
-          <line class="link" x1="260" y1="260" x2="94.3" y2="297.8" style="animation-delay:.4s"/>
-          <line class="link" x1="260" y1="260" x2="127.1" y2="154.0" style="animation-delay:.48s"/>
+          <line class="link" x1="260" y1="260" x2="407.2" y2="175.0" style="animation-delay:.08s"/>
+          <line class="link" x1="260" y1="260" x2="407.2" y2="345.0" style="animation-delay:.16s"/>
+          <line class="link" x1="260" y1="260" x2="260" y2="430.0" style="animation-delay:.24s"/>
+          <line class="link" x1="260" y1="260" x2="112.8" y2="345.0" style="animation-delay:.32s"/>
+          <line class="link" x1="260" y1="260" x2="112.8" y2="175.0" style="animation-delay:.4s"/>
 
           <g>
             <circle class="node-dot pulse" cx="260" cy="90" r="46"/>
             <text class="node-label" x="260" y="95" text-anchor="middle">RRHH</text>
           </g>
           <g>
-            <circle class="node-dot pulse" cx="392.9" cy="154.0" r="46"/>
-            <text class="node-label" x="392.9" y="159.0" text-anchor="middle">FINANZAS</text>
+            <circle class="node-dot pulse" cx="407.2" cy="175.0" r="46"/>
+            <text class="node-label" x="407.2" y="180.0" text-anchor="middle">FINANZAS</text>
           </g>
           <g>
-            <circle class="node-dot pulse" cx="425.7" cy="297.8" r="46"/>
-            <text class="node-label" x="425.7" y="302.8" text-anchor="middle">OPERACIONES</text>
+            <circle class="node-dot pulse" cx="407.2" cy="345.0" r="46"/>
+            <text class="node-label" x="407.2" y="350.0" text-anchor="middle">OPERACIONES</text>
           </g>
           <g>
-            <circle class="node-dot pulse" cx="333.8" cy="413.2" r="46"/>
-            <text class="node-label" x="333.8" y="418.2" text-anchor="middle">LEGAL</text>
+            <circle class="node-dot pulse" cx="260" cy="430.0" r="46"/>
+            <text class="node-label" x="260" y="435.0" text-anchor="middle">LEGAL</text>
           </g>
           <g>
-            <circle class="node-dot pulse" cx="186.2" cy="413.2" r="46"/>
-            <text class="node-label" x="186.2" y="418.2" text-anchor="middle">TRAMITES</text>
+            <circle class="node-dot pulse" cx="112.8" cy="345.0" r="46"/>
+            <text class="node-label" x="112.8" y="350.0" text-anchor="middle">TRAMITES</text>
           </g>
           <g>
-            <circle class="node-dot pulse" cx="94.3" cy="297.8" r="46"/>
-            <text class="node-label" x="94.3" y="302.8" text-anchor="middle">MARKETING</text>
-          </g>
-          <g>
-            <circle class="node-dot pulse" cx="127.1" cy="154.0" r="46"/>
-            <text class="node-label" x="127.1" y="159.0" text-anchor="middle">VENTAS</text>
+            <circle class="node-dot pulse" cx="112.8" cy="175.0" r="46"/>
+            <text class="node-label" x="112.8" y="180.0" text-anchor="middle">MARKETING</text>
           </g>
 
           <circle cx="260" cy="260" r="72" fill="#12233f" stroke="#2f5fdb" stroke-width="1.5"/>
@@ -451,7 +488,7 @@
     </div>
   </section>
 
-  <!-- SOBRE NOSOTROS -->
+  <!-- # Sección: Sobre nosotros -->
   <section id="nosotros">
     <div class="section-banner"><div class="wrap"><span>Sobre nosotros</span></div></div>
     <div class="wrap">
@@ -460,8 +497,8 @@
       </div>
       <div class="about-grid">
         <div>
-          <p>Resolvo nace de una idea simple: las empresas pequeñas y medianas necesitan el mismo nivel de gestión profesional que las grandes corporaciones, pero sin tener que armar un equipo interno completo para lograrlo.</p>
-          <p>Somos un equipo multidisciplinario de profesionales especializados en distintas áreas del funcionamiento de una empresa — desde la gestión de personas hasta las finanzas, las operaciones y los trámites del día a día. Trabajamos de forma integrada, aportando experiencia real de cada área para resolver los desafíos administrativos que toda empresa enfrenta.</p>
+          <p>Resolvo nace de una idea simple: las empresas necesitan el mismo nivel de gestión profesional que las grandes corporaciones, pero sin tener que armar un equipo interno completo para lograrlo.</p>
+          <p>Somos un equipo multidisciplinario de profesionales especializados en distintas áreas del funcionamiento de una empresa, desde la gestión de personas, las finanzas, las operaciones y los trámites del día a día. Trabajamos de forma integrada, aportando experiencia real de cada área para resolver los desafíos administrativos que toda empresa enfrenta.</p>
         </div>
         <div class="about-quote">
           Simplificamos tu gestión, para que puedas dedicar tu tiempo a lo que realmente hace crecer tu negocio.
@@ -470,77 +507,82 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  <!-- # Sección: Servicios (outsourcing) -->
   <section id="servicios">
     <div class="section-banner"><div class="wrap"><span>Servicios</span></div></div>
     <div class="wrap">
       <div class="section-head">
         <h2>Áreas donde te acompañamos.</h2>
-        <p>Distintas disciplinas, integradas en un solo servicio de backoffice.</p>
+        <p>Distintas disciplinas, integradas en un solo servicio de <strong>outsourcing</strong>: nuestro equipo ejecuta directamente estas tareas por tu empresa, de forma personalizada según tus necesidades. ¿Buscas solo orientación puntual? Revisa nuestras <a href="#asesorias" style="color:var(--accent-bright); text-decoration:underline;">Asesorías</a>.</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="dot"></div>
-          <h3>Gestión de Personas y Cultura Organizacional</h3>
-          <p>Acompañamos a tu empresa en la construcción de equipos sólidos: procesos de selección, diseño de estructura organizacional, definición de misión, visión y valores, y valoración de cargos.</p>
+          <div class="title-row"><div class="dot"></div><h3>Gestión de Personas y Cultura Organizacional (RRHH)</h3></div>
+          <p>Acompañamos a tu empresa en la construcción de equipos sólidos y una cultura organizacional definida: procesos de selección y entrevistas, diseño de estructura organizacional, desarrollo de la filosofía corporativa, y desarrollo de perfiles de cargo, estructura de remuneraciones y compensaciones.</p>
         </div>
         <div class="service-card">
-          <div class="dot"></div>
-          <h3>Finanzas, Rentas y Compensaciones</h3>
-          <p>Gestionamos la estructura de remuneraciones y compensaciones de tu empresa, asegurando procesos claros y competitivos para tu equipo.</p>
+          <div class="title-row"><div class="dot"></div><h3>Finanzas</h3></div>
+          <p>Replicamos las funciones que las grandes empresas tienen internamente en sus áreas financieras, adaptadas a tu escala: adquisiciones, tesorería, cuentas corrientes, contabilidad y automatización de procesos financieros.</p>
         </div>
         <div class="service-card">
-          <div class="dot"></div>
-          <h3>Operaciones y Adquisiciones</h3>
-          <p>Nos encargamos de la gestión de compras, costos, negociaciones con proveedores, cotizaciones y tesorería de tu empresa.</p>
+          <div class="title-row"><div class="dot"></div><h3>Operaciones</h3></div>
+          <p>Apoyamos la gestión operativa diaria de tu empresa: gestión de compras y costos, negociaciones con proveedores, elaboración de presupuestos, y apoyo general en la operación del negocio.</p>
         </div>
         <div class="service-card">
-          <div class="dot"></div>
-          <h3>Trámites y Facturación</h3>
-          <p>Gestionamos la facturación, los trámites municipales, la solicitud de permisos y la automatización de procesos administrativos.</p>
+          <div class="title-row"><div class="dot"></div><h3>Trámites</h3></div>
+          <p>Realizamos las gestiones y trámites de tu empresa ante distintas instituciones, para que no tengas que destinar tiempo ni personal propio a ello: trámites ante el SII, trámites municipales, solicitud de permisos, gestiones bancarias y trámites ante AFP e Isapres.</p>
         </div>
         <div class="service-card">
-          <div class="dot"></div>
-          <h3>Asesoría Legal</h3>
+          <div class="title-row"><div class="dot"></div><h3>Asesoría Legal</h3></div>
           <p>Contamos con apoyo legal especializado para acompañar la operación y las decisiones de tu empresa.</p>
         </div>
         <div class="service-card">
-          <div class="dot"></div>
-          <h3>Marketing</h3>
-          <p>Apoyamos la presencia y comunicación de tu marca, con foco en fortalecer tu posicionamiento frente a clientes y en el mercado.</p>
-        </div>
-        <div class="service-card">
-          <div class="dot"></div>
-          <h3>Ventas</h3>
-          <p>Acompañamos la gestión comercial de tu empresa, apoyando procesos de negociación y relación con clientes para impulsar tus resultados.</p>
+          <div class="title-row"><div class="dot"></div><h3>Marketing</h3></div>
+          <p>Gestionamos el marketing digital de tu empresa: presencia en redes sociales, campañas y estrategias digitales orientadas a fortalecer tu marca.</p>
         </div>
       </div>
-      <p class="rubros-note" style="margin-top:20px;">Marketing y Ventas se ofrecen según las necesidades específicas de cada cliente — cuéntanos tu caso y lo revisamos juntos.</p>
     </div>
   </section>
 
-  <!-- RUBROS -->
-  <section id="rubros">
-    <div class="section-banner"><div class="wrap"><span>Empresas que confían en nosotros</span></div></div>
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Experiencia en distintos rubros.</h2>
+  <!-- # Sección: Asesorías -->
+  <section id="asesorias">
+    <div class="section-banner"><div class="wrap"><span>Asesorías</span></div></div>
+    <div class="wrap asesorias-grid">
+      <div>
+        <div class="section-head">
+          <h2>Orientación Experta.</h2>
+          <p>Si tu empresa ya cuenta con equipo pero necesita una mirada experta puntual, ofrecemos asesoría en cualquiera de nuestras áreas.</p>
+        </div>
+        <div class="chip-row">
+          <span class="chip">RRHH</span>
+          <span class="chip">Finanzas</span>
+          <span class="chip">Operaciones</span>
+          <span class="chip">Trámites</span>
+          <span class="chip">Legal</span>
+          <span class="chip">Marketing</span>
+        </div>
+        <p class="rubros-note">Y no se limita a estas áreas — <strong>según la necesidad de tu empresa</strong>, podemos asesorarte en otras materias que no estén en esta lista. Cuéntanos tu caso y lo revisamos juntos.</p>
       </div>
-      <div class="chip-row">
-        <span class="chip">Gastronomía</span>
-        <span class="chip">Hotelería</span>
-        <span class="chip">Inmobiliarias</span>
-        <span class="chip">E-commerce</span>
-        <span class="chip">Retail</span>
-        <span class="chip">Farmacia</span>
-        <span class="chip">Metalúrgica</span>
-        <span class="chip">Abogacía</span>
+      <div class="asesorias-art">
+        <svg viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Proceso de asesoría: tu empresa, Resolvo, asesorías y resultado">
+          <rect x="135" y="55" width="290" height="95" rx="14" fill="#eef1f7" stroke="#e2e5ec" stroke-width="1.5"/>
+          <circle cx="167" cy="87" r="8" fill="#12233f"/>
+          <text x="187" y="94" class="art-label-card" style="fill:#0f1626;">Resultado</text>
+          <rect x="100" y="120" width="290" height="100" rx="14" fill="#f4f6fa" stroke="#e2e5ec" stroke-width="1.5"/>
+          <circle cx="132" cy="152" r="8" fill="#12233f"/>
+          <text x="152" y="159" class="art-label-card" style="fill:#0f1626;">Asesorías</text>
+          <rect x="65" y="185" width="290" height="100" rx="14" fill="#12233f" stroke="#2f5fdb" stroke-width="2"/>
+          <circle cx="97" cy="217" r="8" fill="#7ba3ff"/>
+          <text x="117" y="224" class="art-label-card" style="fill:#ffffff; font-weight:800;">Resolvo</text>
+          <rect x="30" y="250" width="290" height="110" rx="14" fill="#e6eaf2" stroke="#dde1ea" stroke-width="1.5"/>
+          <circle cx="62" cy="284" r="8" fill="#12233f"/>
+          <text x="82" y="291" class="art-label-card" style="fill:#0f1626;">Tu empresa</text>
+        </svg>
       </div>
-      <p class="rubros-note">Si tu rubro no está en esta lista, <strong>no te preocupes</strong> — nuestra experiencia multidisciplinaria nos permite adaptarnos y apoyarte igual.</p>
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- # Sección: Contacto -->
   <section id="contacto">
     <div class="section-banner"><div class="wrap"><span>Contacto</span></div></div>
     <div class="wrap contact-grid">
@@ -577,6 +619,7 @@
 
 </main>
 
+<!-- # Sección: Footer -->
 <footer>
   <div class="wrap">
     <a class="brand" href="#top">
@@ -587,6 +630,7 @@
   </div>
 </footer>
 
+<!-- # Sección: JS — menú móvil, scroll-spy, efecto de clic en botones y envío del formulario de contacto -->
 <script>
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
@@ -601,14 +645,14 @@
   document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.classList.remove('btn-glow');
-      void btn.offsetWidth;
+      void btn.offsetWidth; // reinicia la animación si se hace clic varias veces
       btn.classList.add('btn-glow');
       setTimeout(() => btn.classList.remove('btn-glow'), 600);
     });
   });
 
   // Scroll-spy: resalta el link del menú según la sección visible
-  const sections = ['inicio', 'nosotros', 'servicios', 'contacto']
+  const sections = ['inicio', 'nosotros', 'servicios', 'asesorias', 'contacto']
     .map(id => document.getElementById(id))
     .filter(Boolean);
   const linkMap = {};
