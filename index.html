@@ -1,51 +1,1663 @@
 <!DOCTYPE html>
 <html lang="es-CL">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0B1730">
-  <meta name="description" content="Resolvo externaliza la gestión de personas, finanzas, operaciones, trámites, apoyo legal y marketing para que tu empresa pueda enfocarse en crecer.">
-  <title>Resolvo | Backoffice multidisciplinario para empresas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <meta content="#0b1730" name="theme-color"/>
+  <meta content="Resolvo externaliza la gestión de personas, finanzas, operaciones, trámites, apoyo legal y marketing para que tu empresa pueda enfocarse en crecer." name="description"/>
+  <title>
+   Resolvo | Backoffice multidisciplinario
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
   <style>
-    :root{--navy:#0b1730;--navy2:#13284e;--blue:#356df3;--blue2:#2457ce;--cyan:#72d7e8;--white:#fff;--paper:#f6f8fc;--text:#13203a;--muted:#647087;--line:#dfe5ef;--success:#16895a;--shadow:0 22px 55px rgba(11,23,48,.12);--radius:22px;--max:1160px}
-    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%} body{margin:0;background:var(--white);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.65;overflow-x:hidden} body.menu-open{overflow:hidden} img,svg{max-width:100%} a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit} .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font:600 .76rem 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}.eyebrow:before{content:"";width:8px;height:8px;border-radius:99px;background:var(--blue);box-shadow:0 0 0 5px rgba(53,109,243,.11)} h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.035em} h1{font-size:clamp(2.65rem,5.2vw,4.7rem)} h2{font-size:clamp(2rem,3.6vw,3.25rem)} h3{font-size:1.12rem} p{margin:0}.section{padding:104px 0}.section.soft{background:var(--paper)}.section-head{max-width:760px;margin-bottom:44px}.section-head h2{margin-top:16px}.section-head p{margin-top:18px;color:var(--muted);font-size:1.06rem}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:800;border:1px solid transparent;transition:.2s ease;cursor:pointer}.btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(53,109,243,.25)}.btn-primary:hover{background:var(--blue2);transform:translateY(-2px)}.btn-secondary{background:#fff;color:var(--navy);border-color:var(--line)}.btn-secondary:hover{border-color:var(--blue);color:var(--blue)}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,23,48,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}nav.wrap{height:78px;display:flex;align-items:center;justify-content:space-between}.brand img{height:38px;width:auto;display:block}.nav-links{display:flex;align-items:center;gap:28px;color:#e8edfa;font-weight:600;font-size:.92rem}.nav-links a:hover,.nav-links a.active{color:var(--cyan)}.nav-links .nav-cta{padding:10px 17px;border-radius:10px;background:var(--blue);color:#fff}.nav-toggle{display:none;width:46px;height:46px;border:0;background:transparent;color:#fff;cursor:pointer}.nav-toggle span{display:block;width:23px;height:2px;background:currentColor;margin:5px auto;transition:.2s}
-    .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:104px 0 96px}.hero:before{content:"";position:absolute;inset:-30% -15% auto 45%;height:700px;background:radial-gradient(circle,rgba(53,109,243,.38),transparent 64%);pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;gap:64px;align-items:center}.hero .eyebrow{color:var(--cyan)}.hero .eyebrow:before{background:var(--cyan);box-shadow:0 0 0 5px rgba(114,215,232,.12)}.hero h1{margin:22px 0 24px;max-width:12ch}.hero h1 em{font-style:normal;color:#8cabff}.hero-copy{max-width:60ch;color:#c3cde0;font-size:1.15rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.hero-actions .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}.hero-actions .btn-secondary:hover{border-color:#fff}.trust-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:32px;color:#aebbd3;font-size:.84rem}.trust-row span{display:flex;align-items:center;gap:7px}.trust-row span:before{content:"✓";color:var(--cyan);font-weight:800}.hero-panel{position:relative;min-height:520px}.orbit{position:absolute;inset:0;margin:auto;width:min(100%,520px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(140,171,255,.2);background:radial-gradient(circle at center,rgba(53,109,243,.18),transparent 55%)}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(140,171,255,.14);border-radius:50%;inset:14%}.orbit:after{inset:29%}.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:32px;display:grid;place-items:center;background:linear-gradient(145deg,#356df3,#183a8a);box-shadow:0 30px 70px rgba(0,0,0,.32);font-weight:800;font-size:1.35rem}.orbit-card{position:absolute;width:150px;padding:15px 14px;border:1px solid rgba(255,255,255,.15);border-radius:16px;background:rgba(19,40,78,.82);backdrop-filter:blur(12px);box-shadow:0 15px 34px rgba(0,0,0,.18)}.orbit-card b{display:block;font-size:.89rem}.orbit-card small{color:#9eacca}.oc1{top:2%;left:35%}.oc2{top:23%;right:-2%}.oc3{bottom:18%;right:1%}.oc4{bottom:1%;left:35%}.oc5{bottom:18%;left:-2%}.oc6{top:23%;left:-2%}
-    .proof{position:relative;margin-top:-38px;z-index:3}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.proof-item{padding:28px 30px}.proof-item+ .proof-item{border-left:1px solid var(--line)}.proof-item b{display:block;color:var(--navy);font-size:1rem}.proof-item span{display:block;margin-top:5px;color:var(--muted);font-size:.91rem}
-    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.pain-card{padding:26px;border:1px solid var(--line);border-radius:18px;background:#fff}.pain-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#eef3ff;color:var(--blue);font-weight:800;margin-bottom:19px}.pain-card p{margin-top:10px;color:var(--muted);font-size:.94rem}.solution-callout{margin-top:22px;padding:28px 30px;border-radius:20px;background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;display:flex;justify-content:space-between;align-items:center;gap:25px}.solution-callout p{color:#c8d2e5;max-width:66ch}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service-card{padding:27px;border:1px solid var(--line);border-radius:20px;background:#fff;transition:.2s}.service-card:hover{transform:translateY(-5px);border-color:#b9c9f3;box-shadow:0 20px 45px rgba(11,23,48,.09)}.service-num{font:600 .75rem 'IBM Plex Mono',monospace;color:var(--blue)}.service-card h3{margin:14px 0 15px}.service-card ul{padding:0;margin:0;list-style:none;display:grid;gap:9px;color:var(--muted);font-size:.91rem}.service-card li{display:flex;gap:8px}.service-card li:before{content:"•";color:var(--blue);font-weight:800}
-    .process{background:var(--navy);color:#fff}.process .section-head p{color:#b8c4da}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}.step{position:relative;padding:27px 24px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);counter-increment:step}.step:before{content:"0" counter(step);display:block;color:var(--cyan);font:600 .78rem 'IBM Plex Mono',monospace;margin-bottom:26px}.step p{margin-top:10px;color:#afbdd4;font-size:.91rem}
-    .models-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.model-card{padding:34px;border-radius:22px;border:1px solid var(--line);background:#fff}.model-card.featured{background:linear-gradient(145deg,#eff4ff,#fff);border-color:#bfcdf3}.model-label{display:inline-block;padding:6px 10px;border-radius:999px;background:#eaf0ff;color:var(--blue);font:600 .72rem 'IBM Plex Mono',monospace;text-transform:uppercase}.model-card h3{font-size:1.55rem;margin:19px 0 12px}.model-card p{color:var(--muted)}.model-card ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}.model-card li:before{content:"✓";color:var(--success);font-weight:800;margin-right:9px}
-    .credibility{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}.credibility-visual{min-height:430px;border-radius:26px;background:linear-gradient(145deg,#0b1730,#1c3f78);position:relative;overflow:hidden;box-shadow:var(--shadow)}.credibility-visual:before{content:"";position:absolute;width:330px;height:330px;border:1px solid rgba(255,255,255,.16);border-radius:50%;left:-80px;top:-90px;box-shadow:0 0 0 70px rgba(255,255,255,.035),0 0 0 140px rgba(255,255,255,.025)}.visual-card{position:absolute;padding:18px;border-radius:16px;background:#fff;box-shadow:0 18px 45px rgba(0,0,0,.25);width:210px}.visual-card strong{display:block;color:var(--navy)}.visual-card small{color:var(--muted)}.vc1{left:9%;bottom:12%}.vc2{right:8%;top:14%}.vc3{right:10%;bottom:23%;background:#356df3;color:#fff}.vc3 strong,.vc3 small{color:#fff}.credibility-copy h2{margin:16px 0 20px}.credibility-copy>p{color:var(--muted)}.cred-list{margin-top:25px;display:grid;gap:16px}.cred-item{display:grid;grid-template-columns:42px 1fr;gap:13px}.cred-item span{width:42px;height:42px;border-radius:12px;background:#edf2ff;color:var(--blue);display:grid;place-items:center;font-weight:800}.cred-item p{color:var(--muted);font-size:.91rem;margin-top:3px}
-    .contact{background:var(--paper)}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start}.contact-copy h2{margin:16px 0 18px}.contact-copy>p{color:var(--muted);max-width:52ch}.contact-lines{margin-top:28px;display:grid;gap:14px}.contact-line{display:flex;gap:12px;align-items:center}.contact-line b{min-width:86px;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}.contact-line a{color:var(--blue);font-weight:700}.contact-form{padding:30px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.82rem;color:var(--muted);font-weight:600}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:11px;background:#f9faff;color:var(--text);padding:12px 13px;font-size:16px}.field textarea{min-height:130px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(53,109,243,.13);border-color:var(--blue)}.submit-btn{width:100%;margin-top:14px}.form-note,#formStatus{font-size:.79rem;color:var(--muted);margin-top:10px}.success{color:var(--success)!important;font-weight:700}.error{color:#b42318!important;font-weight:700}
-    footer{background:var(--navy);color:#fff;padding:34px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-inner .brand img{height:28px}.footer-inner p{color:#9facc3;font-size:.82rem}.footer-social{display:flex;gap:10px}.footer-social a{width:38px;height:38px;border:1px solid rgba(255,255,255,.18);border-radius:50%;display:grid;place-items:center}.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.24)}
-    @media(max-width:900px){.hero-grid,.credibility,.contact-grid{grid-template-columns:1fr}.hero{padding-top:72px}.hero-panel{min-height:480px}.services-grid,.pain-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.credibility-visual{order:2}.solution-callout{align-items:flex-start}}
-    @media(max-width:780px){.wrap{width:min(100% - 32px,var(--max))}nav.wrap{height:70px}.brand img{height:32px;max-width:160px}.nav-toggle{display:block}.nav-links{position:fixed;top:70px;left:0;right:0;max-height:calc(100dvh - 70px);overflow:auto;background:var(--navy);padding:17px 16px 28px;display:flex;flex-direction:column;align-items:stretch;gap:0;opacity:0;transform:translateY(-10px);pointer-events:none;transition:.2s}.nav-links.open{opacity:1;transform:none;pointer-events:auto}.nav-links a{min-height:52px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.09)}.nav-links .nav-cta{justify-content:center;margin-top:13px;border:0}.hero{padding:58px 0 70px}.hero-grid{gap:36px}.hero h1{font-size:clamp(2.35rem,12vw,3.35rem)}.hero-copy{font-size:1.04rem}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.trust-row{gap:11px;flex-direction:column}.hero-panel{min-height:350px}.orbit{width:350px;left:50%;transform:translateX(-50%)}.core{width:105px;height:105px;border-radius:24px;font-size:1.05rem}.orbit-card{width:112px;padding:10px;font-size:.76rem}.orbit-card small{display:none}.oc1,.oc4{left:34%}.proof{margin-top:-28px}.proof-grid{grid-template-columns:1fr}.proof-item{padding:20px}.proof-item+.proof-item{border-left:0;border-top:1px solid var(--line)}.section{padding:74px 0}.section-head{margin-bottom:30px}.pain-grid,.services-grid,.steps,.models-grid{grid-template-columns:1fr}.solution-callout{padding:24px;flex-direction:column}.service-card:hover{transform:none}.credibility{gap:34px}.credibility-visual{min-height:340px}.visual-card{width:170px;padding:14px}.contact-grid{gap:32px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.contact-form{padding:22px 17px}.contact-line{align-items:flex-start;flex-direction:column;gap:2px}.footer-inner{flex-direction:column;text-align:center}.whatsapp-float{width:52px;height:52px;right:13px;bottom:13px}footer{padding-bottom:78px}}
-    @media(max-width:420px){.hero-panel{min-height:315px}.orbit{width:315px}.orbit-card{width:101px}.oc2,.oc3{right:-1%}.oc5,.oc6{left:-1%}.section-head h2{font-size:1.9rem}.credibility-visual{min-height:310px}.visual-card{width:155px}.vc1{left:5%}.vc2{right:5%}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+:root{
+  --navy:#0b1730;
+  --navy2:#152b52;
+  --blue:#356df3;
+  --cyan:#72d7e8;
+  --paper:#f6f8fc;
+  --text:#13203a;
+  --muted:#647087;
+  --line:#dfe5ef;
+  --shadow:0 18px 46px rgba(11,23,48,.11);
+  --max:1160px}
+
+*{
+  box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:76px;
+  -webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  font-family:Manrope,system-ui,sans-serif;
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden}
+
+body.lock{
+  overflow:hidden}
+
+a{
+  color:inherit;
+  text-decoration:none}
+
+img,svg{
+  max-width:100%}
+
+button,input,select,textarea{
+  font:inherit}
+
+.wrap{
+  width:min(var(--max),calc(100% - 48px));
+  margin:auto}
+
+h1,h2,h3{
+  margin:0;
+  line-height:1.1;
+  letter-spacing:-.035em}
+
+h1{
+  font-size:clamp(2.65rem,5.2vw,4.7rem)}
+
+h2{
+  font-size:clamp(1.95rem,3.4vw,3.1rem)}
+
+p{
+  margin:0}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--blue);
+  font:600 .76rem 'IBM Plex Mono',monospace;
+  letter-spacing:.14em;
+  text-transform:uppercase}
+
+.eyebrow:before{
+  content:"";
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--blue);
+  box-shadow:none;
+  animation:none}
+
+.section{
+  padding:38px 0 58px}
+
+.section.soft{
+  background:var(--paper)}
+
+.section-head{
+  max-width:760px;
+  margin-bottom:25px}
+
+.section-head h2{
+  margin-top:12px}
+
+.section-head p{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:1.04rem}
+
+.btn{
+  min-height:50px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:12px;
+  font-weight:800;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.2s}
+
+.btn-primary{
+  background:var(--blue);
+  color:white;
+  box-shadow:0 12px 28px rgba(53,109,243,.22)}
+
+.btn-primary:hover{
+  background:#2557d1;
+  transform:translateY(-2px)}
+
+.btn-secondary{
+  border-color:rgba(255,255,255,.3);
+  color:white}
+
+.btn-secondary:hover{
+  border-color:white}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(11,23,48,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08)}
+
+nav.wrap{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between}
+
+.brand{
+  display:inline-flex;
+  align-items:center;
+  background:white;
+  padding:7px 12px;
+  border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18)}
+
+.brand img{
+  height:32px;
+  width:auto;
+  display:block}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:27px;
+  color:#edf2ff;
+  font-weight:600;
+  font-size:.91rem}
+
+.nav-links a:hover,.nav-links a.active{
+  color:var(--cyan)}
+
+.nav-links .nav-cta{
+  padding:10px 16px;
+  border-radius:10px;
+  background:var(--blue);
+  color:white}
+
+.nav-toggle{
+  display:none;
+  width:46px;
+  height:46px;
+  border:0;
+  background:none;
+  color:white}
+
+.nav-toggle span{
+  display:block;
+  width:23px;
+  height:2px;
+  background:currentColor;
+  margin:5px auto}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:var(--navy);
+  color:white;
+  padding:70px 0 68px}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:-45% -10% auto 42%;
+  height:720px;
+  background:radial-gradient(circle,rgba(53,109,243,.4),transparent 65%)}
+
+.hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  gap:58px;
+  align-items:center}
+
+.hero .eyebrow{
+  color:var(--cyan)}
+
+.hero .eyebrow:before{
+  background:var(--cyan)}
+
+.hero h1{
+  margin:18px 0 20px;
+  max-width:12ch}
+
+.hero h1 em{
+  font-style:normal;
+  color:#91afff}
+
+.hero-copy{
+  max-width:60ch;
+  color:#c3cee1;
+  font-size:1.13rem}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px}
+
+.trust{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:27px;
+  color:#aebbd3;
+  font-size:.83rem}
+
+.trust span:before{
+  content:"✓";
+  color:var(--cyan);
+  font-weight:800;
+  margin-right:7px}
+
+.hero-panel{
+  position:relative;
+  min-height:470px}
+
+.orbit{
+  position:absolute;
+  inset:0;
+  margin:auto;
+  width:min(100%,470px);
+  aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid rgba(140,171,255,.2);
+  background:radial-gradient(circle,rgba(53,109,243,.18),transparent 57%)}
+
+.orbit:before,.orbit:after{
+  content:"";
+  position:absolute;
+  inset:15%;
+  border:1px solid rgba(140,171,255,.13);
+  border-radius:50%}
+
+.orbit:after{
+  inset:30%}
+
+.core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:145px;
+  height:145px;
+  border-radius:30px;
+  background:linear-gradient(145deg,#356df3,#183a8a);
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:1.3rem;
+  box-shadow:0 28px 65px rgba(0,0,0,.32)}
+
+.oc{
+  position:absolute;
+  width:142px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:15px;
+  background:rgba(19,40,78,.86);
+  box-shadow:0 14px 32px rgba(0,0,0,.18)}
+
+.oc b{
+  display:block;
+  font-size:.86rem}
+
+.oc small{
+  color:#a7b4ca}
+
+.a{
+  top:2%;
+  left:35%}
+
+.b{
+  top:22%;
+  right:-1%}
+
+.c{
+  bottom:18%;
+  right:0}
+
+.d{
+  bottom:1%;
+  left:35%}
+
+.e{
+  bottom:18%;
+  left:0}
+
+.f{
+  top:22%;
+  left:-1%}
+
+.proof{
+  position:relative;
+  margin-top:-28px;
+  z-index:3}
+
+.proof-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow)}
+
+.proof-item{
+  padding:23px 27px}
+
+.proof-item+.proof-item{
+  border-left:1px solid var(--line)}
+
+.proof-item b{
+  display:block}
+
+.proof-item span{
+  color:var(--muted);
+  font-size:.9rem}
+
+.cards3,.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px}
+
+.card,.service{
+  padding:25px;
+  border:1px solid var(--line);
+  border-radius:19px;
+  background:white}
+
+.card:before{
+  content:"";
+  display:block;
+  width:42px;
+  height:5px;
+  border-radius:99px;
+  background:var(--blue);
+  margin-bottom:20px}
+
+.card p,.service li{
+  color:var(--muted);
+  font-size:.92rem}
+
+.card p{
+  margin-top:10px}
+
+.callout{
+  margin-top:20px;
+  padding:25px 27px;
+  border-radius:19px;
+  background:linear-gradient(120deg,var(--navy),var(--navy2));
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px}
+
+.callout p{
+  color:#c8d2e5}
+
+.service{
+  transition:.2s}
+
+.service:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow)}
+
+.service-tag{
+  font:600 .72rem 'IBM Plex Mono',monospace;
+  color:var(--blue)}
+
+.service h3{
+  margin:12px 0 14px}
+
+.service ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:8px}
+
+.service li:before{
+  content:"•";
+  color:var(--blue);
+  font-weight:800;
+  margin-right:8px}
+
+.process{
+  background:var(--navy);
+  color:white}
+
+.process .section-head p{
+  color:#b8c4da}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px}
+
+.step{
+  padding:25px 22px;
+  border-radius:18px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.12)}
+
+.step:before{
+  content:"";
+  display:block;
+  width:38px;
+  height:5px;
+  border-radius:99px;
+  background:var(--cyan);
+  margin-bottom:20px}
+
+.step p{
+  margin-top:9px;
+  color:#afbdd4;
+  font-size:.91rem}
+
+.models{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px}
+
+.model{
+  padding:31px;
+  border-radius:21px;
+  border:1px solid var(--line);
+  background:white}
+
+.model.featured{
+  background:linear-gradient(145deg,#edf3ff,#fff);
+  border-color:#c5d2f3}
+
+.model-label{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:99px;
+  background:#eaf0ff;
+  color:var(--blue);
+  font:600 .7rem 'IBM Plex Mono',monospace;
+  text-transform:uppercase}
+
+.model h3{
+  font-size:1.5rem;
+  margin:17px 0 10px}
+
+.model p,.model li{
+  color:var(--muted)}
+
+.model ul{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+  display:grid;
+  gap:9px}
+
+.model li:before{
+  content:"✓";
+  color:#17845a;
+  font-weight:800;
+  margin-right:8px}
+
+.credibility{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:52px;
+  align-items:center}
+
+.credibility-visual{
+  min-height:390px;
+  border-radius:25px;
+  background:linear-gradient(145deg,#0b1730,#1c3f78);
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow)}
+
+.credibility-visual:before{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+  left:-80px;
+  top:-90px;
+  box-shadow:0 0 0 68px rgba(255,255,255,.035),0 0 0 136px rgba(255,255,255,.025)}
+
+.visual-card{
+  position:absolute;
+  padding:17px;
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 18px 45px rgba(0,0,0,.25);
+  width:205px}
+
+.visual-card strong{
+  display:block;
+  color:var(--navy)}
+
+.visual-card small{
+  color:var(--muted)}
+
+.vc1{
+  left:9%;
+  bottom:12%}
+
+.vc2{
+  right:8%;
+  top:14%}
+
+.vc3{
+  right:10%;
+  bottom:23%;
+  background:#356df3;
+  color:#fff}
+
+.vc3 strong,.vc3 small{
+  color:#fff}
+
+.credibility-copy h2{
+  margin:12px 0 16px}
+
+.credibility-copy>p{
+  color:var(--muted)}
+
+.cred-list{
+  margin-top:22px;
+  display:grid;
+  gap:14px}
+
+.cred-item{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  gap:12px}
+
+.cred-item>span{
+  width:40px;
+  height:40px;
+  border-radius:11px;
+  background:#edf2ff;
+  color:var(--blue);
+  display:grid;
+  place-items:center;
+  font-weight:800}
+
+.cred-item p{
+  color:var(--muted);
+  font-size:.9rem;
+  margin-top:2px}
+
+.contact{
+  background:var(--paper)}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:50px}
+
+.contact-copy h2{
+  margin:12px 0 15px}
+
+.contact-copy>p{
+  color:var(--muted)}
+
+.contact-lines{
+  display:grid;
+  gap:12px;
+  margin-top:23px}
+
+.contact-line{
+  display:flex;
+  gap:12px}
+
+.contact-line b{
+  min-width:85px;
+  color:var(--muted);
+  font-size:.76rem;
+  text-transform:uppercase}
+
+.contact-line a{
+  color:var(--blue);
+  font-weight:700}
+
+.form{
+  padding:27px;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:white;
+  box-shadow:var(--shadow)}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px}
+
+.field{
+  display:grid;
+  gap:5px}
+
+.field.full{
+  grid-column:1/-1}
+
+.field label{
+  font-size:.8rem;
+  color:var(--muted);
+  font-weight:600}
+
+.field input,.field select,.field textarea{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:11px 12px;
+  background:#f9faff;
+  font-size:16px}
+
+.field textarea{
+  min-height:125px;
+  resize:vertical}
+
+.submit{
+  width:100%;
+  margin-top:13px}
+
+.note,#formStatus{
+  font-size:.78rem;
+  color:var(--muted);
+  margin-top:9px}
+
+.success{
+  color:#17845a!important;
+  font-weight:700}
+
+.error{
+  color:#b42318!important;
+  font-weight:700}
+
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:40;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#25d366;
+  color:white;
+  box-shadow:0 10px 26px rgba(0,0,0,.24)}
+
+footer{
+  background:var(--navy);
+  color:white;
+  padding:31px 0}
+
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px}
+
+.footer-inner .brand{
+  padding:5px 9px}
+
+.footer-inner .brand img{
+  height:25px}
+
+.footer-inner p{
+  color:#9facc3;
+  font-size:.8rem}
+
+.footer-social{
+  display:flex;
+  gap:10px}
+
+.footer-social a{
+  width:36px;
+  height:36px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:.8rem;
+  font-weight:800}
+
+@media(max-width:900px){
+  .hero-grid,.credibility,.contact-grid{
+  grid-template-columns:1fr}
+
+.cards3,.services{
+  grid-template-columns:1fr 1fr}
+
+.steps{
+  grid-template-columns:1fr 1fr}
+
+.hero-panel{
+  min-height:450px}
+
+.credibility-visual{
+  order:2}
+
+.callout{
+  align-items:flex-start}
+}
+
+@media(max-width:780px){
+  .wrap{
+  width:min(100% - 32px,var(--max))}
+
+nav.wrap{
+  height:68px}
+
+.brand{
+  padding:6px 10px}
+
+.brand img{
+  height:29px;
+  max-width:150px}
+
+.nav-toggle{
+  display:block}
+
+.nav-links{
+  position:fixed;
+  top:68px;
+  left:0;
+  right:0;
+  max-height:calc(100dvh - 68px);
+  overflow:auto;
+  background:var(--navy);
+  padding:16px 16px 26px;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  opacity:0;
+  transform:translateY(-9px);
+  pointer-events:none;
+  transition:.2s}
+
+.nav-links.open{
+  opacity:1;
+  transform:none;
+  pointer-events:auto}
+
+.nav-links a{
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.09)}
+
+.nav-links .nav-cta{
+  justify-content:center;
+  margin-top:12px;
+  border:0}
+
+.hero{
+  padding:45px 0 56px}
+
+.hero-grid{
+  gap:28px}
+
+.hero h1{
+  font-size:clamp(2.25rem,12vw,3.2rem)}
+
+.hero-copy{
+  font-size:1.02rem}
+
+.hero-actions{
+  flex-direction:column}
+
+.hero-actions .btn{
+  width:100%}
+
+.trust{
+  gap:10px;
+  flex-direction:column}
+
+.hero-panel{
+  min-height:335px}
+
+.orbit{
+  width:335px;
+  left:50%;
+  transform:translateX(-50%)}
+
+.core{
+  width:103px;
+  height:103px;
+  border-radius:23px;
+  font-size:1rem}
+
+.oc{
+  width:108px;
+  padding:9px;
+  font-size:.74rem}
+
+.oc small{
+  display:none}
+
+.proof{
+  margin-top:-22px}
+
+.proof-grid,.cards3,.services,.steps,.models{
+  grid-template-columns:1fr}
+
+.proof-item{
+  padding:18px}
+
+.proof-item+.proof-item{
+  border-left:0;
+  border-top:1px solid var(--line)}
+
+.section{
+  padding:27px 0 42px}
+
+.section-head{
+  margin-bottom:18px}
+
+.section-head h2{
+  margin-top:9px}
+
+.section-head p{
+  margin-top:11px}
+
+.callout{
+  padding:22px;
+  flex-direction:column}
+
+.service:hover{
+  transform:none}
+
+.credibility{
+  gap:28px}
+
+.credibility-visual{
+  min-height:330px}
+
+.visual-card{
+  width:168px;
+  padding:13px}
+
+.contact-grid{
+  gap:26px}
+
+.form-grid{
+  grid-template-columns:1fr}
+
+.field.full{
+  grid-column:auto}
+
+.form{
+  padding:20px 16px}
+
+.contact-line{
+  flex-direction:column;
+  gap:1px}
+
+.footer-inner{
+  flex-direction:column;
+  text-align:center}
+
+.whatsapp{
+  width:50px;
+  height:50px;
+  right:12px;
+  bottom:12px}
+
+footer{
+  padding-bottom:72px}
+}
+
+@media(max-width:420px){
+  .hero-panel{
+  min-height:300px}
+
+.orbit{
+  width:300px}
+
+.oc{
+  width:96px}
+
+.section{
+  padding-top:24px}
+
+.card,.service,.step,.model{
+  padding:21px 18px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+  scroll-behavior:auto}
+
+*,*:before,*:after{
+  animation:none!important;
+  transition:none!important}
+}
   </style>
-</head>
-<body>
-<header><nav class="wrap"><a class="brand" href="#inicio" aria-label="Resolvo, inicio"><img src="logo-rect.png" alt="Resolvo"></a><div class="nav-links" id="navLinks"><a href="#problemas">Por qué Resolvo</a><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#modalidades">Modalidades</a><a class="nav-cta" href="#contacto">Solicitar diagnóstico</a></div><button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button></nav></header>
-<main>
-<section class="hero" id="inicio"><div class="wrap hero-grid"><div><span class="eyebrow">Backoffice multidisciplinario</span><h1>Tu empresa crece mejor cuando no tienes que <em>hacerlo todo.</em></h1><p class="hero-copy">Externalizamos la gestión de personas, finanzas, operaciones, trámites, apoyo legal y marketing. Un solo equipo para ordenar el día a día, dar continuidad a tus procesos y liberar tiempo para dirigir tu negocio.</p><div class="hero-actions"><a class="btn btn-primary" href="#contacto">Solicitar diagnóstico inicial</a><a class="btn btn-secondary" href="#servicios">Explorar servicios</a></div><div class="trust-row"><span>Servicio adaptado a cada empresa</span><span>Un equipo, múltiples disciplinas</span><span>Outsourcing o asesoría puntual</span></div></div><div class="hero-panel" aria-label="Áreas de servicio integradas por Resolvo"><div class="orbit"><div class="core">Resolvo</div><div class="orbit-card oc1"><b>Personas</b><small>Equipos y cultura</small></div><div class="orbit-card oc2"><b>Finanzas</b><small>Control y continuidad</small></div><div class="orbit-card oc3"><b>Operaciones</b><small>Procesos eficientes</small></div><div class="orbit-card oc4"><b>Trámites</b><small>Gestión oportuna</small></div><div class="orbit-card oc5"><b>Legal</b><small>Apoyo especializado</small></div><div class="orbit-card oc6"><b>Marketing</b><small>Presencia y crecimiento</small></div></div></div></div></section>
-<div class="proof"><div class="wrap proof-grid"><div class="proof-item"><b>Más foco para dirigir</b><span>Delega tareas que consumen tiempo y atención.</span></div><div class="proof-item"><b>Menos fragmentación</b><span>Centraliza distintas áreas en un mismo equipo.</span></div><div class="proof-item"><b>Mayor capacidad de gestión</b><span>Accede a especialistas sin crear cada área internamente.</span></div></div></div>
-<section class="section soft" id="problemas"><div class="wrap"><div class="section-head"><span class="eyebrow">El desafío</span><h2>Cuando la administración absorbe tu agenda, el crecimiento pierde espacio.</h2><p>Resolvo convierte tareas dispersas en una gestión coordinada, con alcance definido y comunicación directa.</p></div><div class="pain-grid"><article class="pain-card"><div class="pain-icon">01</div><h3>El equipo está sobrecargado</h3><p>Las tareas administrativas se acumulan y terminan desplazando prioridades comerciales u operativas.</p></article><article class="pain-card"><div class="pain-icon">02</div><h3>Faltan procesos claros</h3><p>La información depende de personas, correos o planillas aisladas y cuesta mantener continuidad.</p></article><article class="pain-card"><div class="pain-icon">03</div><h3>Contratar cada especialidad no es viable</h3><p>La empresa necesita apoyo profesional, pero no necesariamente un departamento interno completo.</p></article></div><div class="solution-callout"><div><h3>Resolvo funciona como una extensión de tu empresa.</h3><p>Definimos qué necesitas, organizamos el alcance y ejecutamos las funciones acordadas junto a tu equipo.</p></div><a class="btn btn-primary" href="#contacto">Conversemos sobre tu operación</a></div></div></section>
-<section class="section" id="servicios"><div class="wrap"><div class="section-head"><span class="eyebrow">Servicios integrados</span><h2>Las áreas que tu empresa necesita, coordinadas en un solo lugar.</h2><p>Elige una necesidad específica o combina disciplinas. La propuesta se configura según los procesos que quieras delegar o fortalecer.</p></div><div class="services-grid"><article class="service-card"><span class="service-num">01 / PERSONAS</span><h3>Gestión de Personas y Cultura</h3><ul><li>Selección y entrevistas</li><li>Estructura organizacional</li><li>Perfiles de cargo</li><li>Remuneraciones y compensaciones</li><li>Filosofía y cultura corporativa</li></ul></article><article class="service-card"><span class="service-num">02 / FINANZAS</span><h3>Finanzas y Administración</h3><ul><li>Tesorería y cuentas corrientes</li><li>Adquisiciones y control de compras</li><li>Apoyo contable</li><li>Orden administrativo</li><li>Automatización de procesos</li></ul></article><article class="service-card"><span class="service-num">03 / OPERACIONES</span><h3>Operaciones y Proveedores</h3><ul><li>Gestión de compras y costos</li><li>Negociación con proveedores</li><li>Elaboración de presupuestos</li><li>Coordinación operativa</li><li>Mejora de procesos</li></ul></article><article class="service-card"><span class="service-num">04 / TRÁMITES</span><h3>Trámites Empresariales</h3><ul><li>Gestiones ante el SII</li><li>Trámites municipales</li><li>Permisos y gestiones bancarias</li><li>AFP e Isapres</li><li>Seguimiento documental</li></ul></article><article class="service-card"><span class="service-num">05 / LEGAL</span><h3>Apoyo Legal Especializado</h3><ul><li>Orientación para decisiones empresariales</li><li>Revisión de necesidades legales</li><li>Coordinación de apoyo especializado</li><li>Acompañamiento de la operación</li></ul></article><article class="service-card"><span class="service-num">06 / MARKETING</span><h3>Marketing Digital</h3><ul><li>Presencia en redes sociales</li><li>Campañas digitales</li><li>Estrategia de contenidos</li><li>Fortalecimiento de marca</li><li>Coordinación de acciones</li></ul></article></div></div></section>
-<section class="section process" id="proceso"><div class="wrap"><div class="section-head"><span class="eyebrow">Cómo trabajamos</span><h2>Un proceso simple para empezar con claridad.</h2><p>Antes de ejecutar, entendemos el contexto y definimos responsabilidades, prioridades y canales de coordinación.</p></div><div class="steps"><article class="step"><h3>Diagnóstico</h3><p>Conversamos sobre la operación, identificamos brechas y entendemos qué está consumiendo tiempo o capacidad.</p></article><article class="step"><h3>Propuesta</h3><p>Definimos servicios, alcance, responsables y una forma de trabajo alineada con la realidad de tu empresa.</p></article><article class="step"><h3>Implementación</h3><p>Ordenamos la información necesaria y comenzamos a ejecutar las funciones acordadas.</p></article><article class="step"><h3>Seguimiento</h3><p>Mantenemos comunicación periódica para revisar prioridades, avances y oportunidades de mejora.</p></article></div></div></section>
-<section class="section soft" id="modalidades"><div class="wrap"><div class="section-head"><span class="eyebrow">Dos formas de ayudarte</span><h2>Elige el nivel de apoyo que tu empresa necesita hoy.</h2><p>No todas las empresas requieren lo mismo. Puedes delegar funciones recurrentes o solicitar una mirada experta para un desafío puntual.</p></div><div class="models-grid"><article class="model-card featured"><span class="model-label">Ejecución continua</span><h3>Outsourcing</h3><p>Resolvo asume tareas y procesos acordados como una extensión de tu equipo.</p><ul><li>Soporte operativo recurrente</li><li>Alcance adaptado a la empresa</li><li>Coordinación entre distintas disciplinas</li><li>Continuidad y seguimiento</li></ul></article><article class="model-card"><span class="model-label">Necesidad específica</span><h3>Asesoría</h3><p>Recibe orientación profesional para analizar una situación, tomar una decisión o estructurar un proyecto.</p><ul><li>Revisión de un desafío puntual</li><li>Recomendaciones especializadas</li><li>Apoyo en cualquiera de nuestras áreas</li><li>Posibilidad de ampliar el alcance</li></ul></article></div></div></section>
-<section class="section"><div class="wrap credibility"><div class="credibility-visual" aria-label="Representación visual de la gestión coordinada"><div class="visual-card vc1"><strong>Tu empresa</strong><small>Prioridades y objetivos</small></div><div class="visual-card vc2"><strong>Resolvo</strong><small>Equipo multidisciplinario</small></div><div class="visual-card vc3"><strong>Resultado</strong><small>Gestión más ordenada</small></div></div><div class="credibility-copy"><span class="eyebrow">Una relación de trabajo clara</span><h2>Profesionales que entienden que detrás de cada tarea hay una decisión de negocio.</h2><p>No ofrecemos una lista rígida de prestaciones. Escuchamos, ordenamos la necesidad y configuramos una solución coherente con la etapa y estructura de tu empresa.</p><div class="cred-list"><div class="cred-item"><span>1</span><div><b>Comunicación directa</b><p>Un canal claro para coordinar requerimientos, prioridades y avances.</p></div></div><div class="cred-item"><span>2</span><div><b>Alcance definido</b><p>Claridad sobre las funciones que ejecuta Resolvo y las que permanecen en tu empresa.</p></div></div><div class="cred-item"><span>3</span><div><b>Solución adaptable</b><p>Comienza por un área y amplía el apoyo cuando la operación lo requiera.</p></div></div></div></div></div></section>
-<section class="section contact" id="contacto"><div class="wrap contact-grid"><div class="contact-copy"><span class="eyebrow">Contacto</span><h2>Cuéntanos qué está frenando a tu empresa.</h2><p>Conversemos sobre las tareas, procesos o áreas que hoy necesitan más estructura. Revisaremos tu caso para identificar una modalidad de apoyo adecuada.</p><div class="contact-lines"><div class="contact-line"><b>Correo</b><span>contacto@resolvo.cl</span></div><div class="contact-line"><b>Web</b><span>www.resolvo.cl</span></div><div class="contact-line"><b>WhatsApp</b><a href="https://wa.me/56961033853?text=Hola%2C%20quiero%20conversar%20sobre%20las%20necesidades%20de%20gesti%C3%B3n%20de%20mi%20empresa." target="_blank" rel="noopener">+56 9 6103 3853</a></div></div></div><form class="contact-form" id="contactForm" action="https://formspree.io/f/mqpzzdgv" method="POST"><div class="form-grid"><div class="field"><label for="name">Nombre</label><input id="name" name="name" type="text" autocomplete="name" required></div><div class="field"><label for="company">Empresa</label><input id="company" name="company" type="text" autocomplete="organization"></div><div class="field"><label for="email">Correo</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="phone">Teléfono</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div><div class="field"><label for="modality">Tipo de apoyo</label><select id="modality" name="modality"><option value="">Selecciona una opción</option><option>Outsourcing</option><option>Asesoría</option><option>No estoy seguro</option></select></div><div class="field"><label for="area">Área principal</label><select id="area" name="area"><option value="">Selecciona un área</option><option>Personas y RRHH</option><option>Finanzas</option><option>Operaciones</option><option>Trámites</option><option>Legal</option><option>Marketing</option><option>Varias áreas</option></select></div><div class="field full"><label for="message">¿Qué necesitas resolver?</label><textarea id="message" name="message" required placeholder="Describe brevemente la situación actual y el apoyo que buscas."></textarea></div></div><button class="btn btn-primary submit-btn" type="submit">Solicitar contacto</button><p class="form-note">Al enviar este formulario, aceptas ser contactado por Resolvo.</p><p id="formStatus" role="status" hidden></p></form></div></section>
-</main>
-<a class="whatsapp-float" href="https://wa.me/56961033853?text=Hola%2C%20quiero%20conversar%20sobre%20las%20necesidades%20de%20gesti%C3%B3n%20de%20mi%20empresa." target="_blank" rel="noopener" aria-label="Escribir a Resolvo por WhatsApp"><svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.36.646 4.567 1.77 6.457L4 29l7.72-1.735A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm6.982 16.24c-.29.81-1.45 1.53-2.36 1.72-.63.13-1.45.24-4.22-.9-3.53-1.46-5.81-5.03-5.99-5.27-.17-.24-1.44-1.92-1.44-3.66 0-1.74.91-2.6 1.23-2.95.32-.35.7-.44.93-.44.23 0 .47 0 .67.01.22.01.5-.08.78.6.29.7.98 2.43 1.06 2.61.09.18.15.39.03.63-.12.24-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.38-.16.75.21.37.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.93 1.8.37.18.59.15.8-.09.22-.24.92-1.07 1.17-1.44.24-.37.49-.31.82-.19.34.12 2.14 1.01 2.51 1.2.37.18.61.27.7.42.09.15.09.87-.2 1.68Z"/></svg></a>
-<footer><div class="wrap footer-inner"><a class="brand" href="#inicio"><img src="logo-circulo.png" alt="Resolvo"></a><p>© 2026 Resolvo. Gestión empresarial con enfoque multidisciplinario.</p><div class="footer-social"><a href="https://facebook.com/resolvo.cl" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="https://instagram.com/resolvo.cl" target="_blank" rel="noopener" aria-label="Instagram">◎</a><a href="https://linkedin.com/company/resolvo-cl" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div></footer>
-<script>
-const toggle=document.getElementById('navToggle'),links=document.getElementById('navLinks');function menu(open){links.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');document.body.classList.toggle('menu-open',open)}toggle.addEventListener('click',()=>menu(!links.classList.contains('open')));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu(false)));window.addEventListener('resize',()=>{if(innerWidth>780)menu(false)});
-const sections=[...document.querySelectorAll('main section[id]')],map={};links.querySelectorAll('a[href^="#"]').forEach(a=>map[a.hash.slice(1)]=a);new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){Object.values(map).forEach(a=>a.classList.remove('active'));if(map[e.target.id])map[e.target.id].classList.add('active')}}),{rootMargin:'-40% 0px -52% 0px'}).observe;
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){Object.values(map).forEach(a=>a.classList.remove('active'));if(map[e.target.id])map[e.target.id].classList.add('active')}}),{rootMargin:'-40% 0px -52% 0px'});sections.forEach(s=>observer.observe(s));
-const form=document.getElementById('contactForm'),status=document.getElementById('formStatus');form.addEventListener('submit',async e=>{e.preventDefault();const b=form.querySelector('button[type="submit"]'),original=b.textContent;b.disabled=true;b.textContent='Enviando...';status.hidden=true;status.className='';try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(!r.ok)throw new Error();status.textContent='Gracias. Tu solicitud fue enviada correctamente.';status.className='success';form.reset()}catch(_){status.textContent='No fue posible enviar el formulario. Intenta nuevamente o escríbenos por WhatsApp.';status.className='error'}finally{status.hidden=false;b.disabled=false;b.textContent=original}});
-</script>
-</body></html>
+ </head>
+ <body>
+  <header>
+   <nav class="wrap">
+    <a class="brand" href="#inicio">
+     <img alt="Resolvo" src="logo-rect.png"/>
+    </a>
+    <div class="nav-links" id="navLinks">
+     <a href="#problemas">
+      Por qué Resolvo
+     </a>
+     <a href="#servicios">
+      Servicios
+     </a>
+     <a href="#proceso">
+      Cómo trabajamos
+     </a>
+     <a href="#modalidades">
+      Modalidades
+     </a>
+     <a class="nav-cta" href="#contacto">
+      Solicitar diagnóstico
+     </a>
+    </div>
+    <button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="nav-toggle" id="navToggle">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+   </nav>
+  </header>
+  <main>
+   <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+     <div>
+      <span class="eyebrow">
+       Backoffice multidisciplinario
+      </span>
+      <h1>
+       Tu empresa crece mejor cuando no tienes que
+       <em>
+        hacerlo todo.
+       </em>
+      </h1>
+      <p class="hero-copy">
+       Externalizamos la gestión de personas, finanzas, operaciones, trámites, apoyo legal y marketing. Un solo equipo para ordenar el día a día, dar continuidad a tus procesos y liberar tiempo para dirigir tu negocio.
+      </p>
+      <div class="hero-actions">
+       <a class="btn btn-primary" href="#contacto">
+        Solicitar diagnóstico inicial
+       </a>
+       <a class="btn btn-secondary" href="#servicios">
+        Explorar servicios
+       </a>
+      </div>
+      <div class="trust">
+       <span>
+        Servicio adaptado a cada empresa
+       </span>
+       <span>
+        Un equipo, múltiples disciplinas
+       </span>
+       <span>
+        Outsourcing o asesoría puntual
+       </span>
+      </div>
+     </div>
+     <div class="hero-panel">
+      <div class="orbit">
+       <div class="core">
+        Resolvo
+       </div>
+       <div class="oc a">
+        <b>
+         Personas
+        </b>
+        <small>
+         Equipos y cultura
+        </small>
+       </div>
+       <div class="oc b">
+        <b>
+         Finanzas
+        </b>
+        <small>
+         Control
+        </small>
+       </div>
+       <div class="oc c">
+        <b>
+         Operaciones
+        </b>
+        <small>
+         Procesos
+        </small>
+       </div>
+       <div class="oc d">
+        <b>
+         Trámites
+        </b>
+        <small>
+         Gestión
+        </small>
+       </div>
+       <div class="oc e">
+        <b>
+         Legal
+        </b>
+        <small>
+         Apoyo
+        </small>
+       </div>
+       <div class="oc f">
+        <b>
+         Marketing
+        </b>
+        <small>
+         Crecimiento
+        </small>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="proof">
+    <div class="wrap proof-grid">
+     <div class="proof-item">
+      <b>
+       Más foco para dirigir
+      </b>
+      <span>
+       Delega tareas que consumen tiempo y atención.
+      </span>
+     </div>
+     <div class="proof-item">
+      <b>
+       Menos fragmentación
+      </b>
+      <span>
+       Centraliza distintas áreas en un mismo equipo.
+      </span>
+     </div>
+     <div class="proof-item">
+      <b>
+       Mayor capacidad de gestión
+      </b>
+      <span>
+       Accede a especialistas sin crear cada área internamente.
+      </span>
+     </div>
+    </div>
+   </div>
+   <section class="section soft" id="problemas">
+    <div class="wrap">
+     <div class="section-head">
+      <span class="eyebrow">
+       El desafío
+      </span>
+      <h2>
+       Cuando la administración absorbe tu agenda, el crecimiento pierde espacio.
+      </h2>
+      <p>
+       Resolvo convierte tareas dispersas en una gestión coordinada, con alcance definido y comunicación directa.
+      </p>
+     </div>
+     <div class="cards3">
+      <article class="card">
+       <h3>
+        El equipo está sobrecargado
+       </h3>
+       <p>
+        Las tareas administrativas se acumulan y terminan desplazando prioridades comerciales u operativas.
+       </p>
+      </article>
+      <article class="card">
+       <h3>
+        Faltan procesos claros
+       </h3>
+       <p>
+        La información depende de personas, correos o planillas aisladas y cuesta mantener continuidad.
+       </p>
+      </article>
+      <article class="card">
+       <h3>
+        Contratar cada especialidad no es viable
+       </h3>
+       <p>
+        La empresa necesita apoyo profesional, pero no necesariamente un departamento interno completo.
+       </p>
+      </article>
+     </div>
+     <div class="callout">
+      <div>
+       <h3>
+        Resolvo funciona como una extensión de tu empresa.
+       </h3>
+       <p>
+        Definimos qué necesitas, organizamos el alcance y ejecutamos las funciones acordadas junto a tu equipo.
+       </p>
+      </div>
+      <a class="btn btn-primary" href="#contacto">
+       Conversemos sobre tu operación
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="servicios">
+    <div class="wrap">
+     <div class="section-head">
+      <span class="eyebrow">
+       Servicios integrados
+      </span>
+      <h2>
+       Las áreas que tu empresa necesita, coordinadas en un solo lugar.
+      </h2>
+      <p>
+       Elige una necesidad específica o combina disciplinas. La propuesta se configura según los procesos que quieras delegar o fortalecer.
+      </p>
+     </div>
+     <div class="services">
+      <article class="service">
+       <span class="service-tag">
+        PERSONAS
+       </span>
+       <h3>
+        Gestión de Personas y Cultura
+       </h3>
+       <ul>
+        <li>
+         Selección y entrevistas
+        </li>
+        <li>
+         Estructura organizacional
+        </li>
+        <li>
+         Perfiles de cargo
+        </li>
+        <li>
+         Remuneraciones y compensaciones
+        </li>
+       </ul>
+      </article>
+      <article class="service">
+       <span class="service-tag">
+        FINANZAS
+       </span>
+       <h3>
+        Finanzas y Administración
+       </h3>
+       <ul>
+        <li>
+         Tesorería y cuentas corrientes
+        </li>
+        <li>
+         Adquisiciones y control de compras
+        </li>
+        <li>
+         Apoyo contable
+        </li>
+        <li>
+         Automatización de procesos
+        </li>
+       </ul>
+      </article>
+      <article class="service">
+       <span class="service-tag">
+        OPERACIONES
+       </span>
+       <h3>
+        Operaciones y Proveedores
+       </h3>
+       <ul>
+        <li>
+         Gestión de compras y costos
+        </li>
+        <li>
+         Negociación con proveedores
+        </li>
+        <li>
+         Presupuestos
+        </li>
+        <li>
+         Mejora de procesos
+        </li>
+       </ul>
+      </article>
+      <article class="service">
+       <span class="service-tag">
+        TRÁMITES
+       </span>
+       <h3>
+        Trámites Empresariales
+       </h3>
+       <ul>
+        <li>
+         Gestiones ante el SII
+        </li>
+        <li>
+         Trámites municipales
+        </li>
+        <li>
+         Permisos y gestiones bancarias
+        </li>
+        <li>
+         Seguimiento documental
+        </li>
+       </ul>
+      </article>
+      <article class="service">
+       <span class="service-tag">
+        LEGAL
+       </span>
+       <h3>
+        Apoyo Legal Especializado
+       </h3>
+       <ul>
+        <li>
+         Orientación para decisiones
+        </li>
+        <li>
+         Revisión de necesidades legales
+        </li>
+        <li>
+         Coordinación de apoyo especializado
+        </li>
+        <li>
+         Acompañamiento de la operación
+        </li>
+       </ul>
+      </article>
+      <article class="service">
+       <span class="service-tag">
+        MARKETING
+       </span>
+       <h3>
+        Marketing Digital
+       </h3>
+       <ul>
+        <li>
+         Presencia en redes sociales
+        </li>
+        <li>
+         Campañas digitales
+        </li>
+        <li>
+         Estrategia de contenidos
+        </li>
+        <li>
+         Fortalecimiento de marca
+        </li>
+       </ul>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section process" id="proceso">
+    <div class="wrap">
+     <div class="section-head">
+      <span class="eyebrow">
+       Cómo trabajamos
+      </span>
+      <h2>
+       Un proceso simple para empezar con claridad.
+      </h2>
+      <p>
+       Antes de ejecutar, entendemos el contexto y definimos responsabilidades, prioridades y canales de coordinación.
+      </p>
+     </div>
+     <div class="steps">
+      <article class="step">
+       <h3>
+        Diagnóstico
+       </h3>
+       <p>
+        Identificamos brechas y entendemos qué está consumiendo tiempo o capacidad.
+       </p>
+      </article>
+      <article class="step">
+       <h3>
+        Propuesta
+       </h3>
+       <p>
+        Definimos servicios, alcance, responsables y una forma de trabajo adecuada.
+       </p>
+      </article>
+      <article class="step">
+       <h3>
+        Implementación
+       </h3>
+       <p>
+        Ordenamos la información y comenzamos a ejecutar las funciones acordadas.
+       </p>
+      </article>
+      <article class="step">
+       <h3>
+        Seguimiento
+       </h3>
+       <p>
+        Revisamos prioridades, avances y oportunidades de mejora.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section soft" id="modalidades">
+    <div class="wrap">
+     <div class="section-head">
+      <span class="eyebrow">
+       Dos formas de ayudarte
+      </span>
+      <h2>
+       Elige el nivel de apoyo que tu empresa necesita hoy.
+      </h2>
+      <p>
+       Puedes delegar funciones recurrentes o solicitar una mirada experta para un desafío puntual.
+      </p>
+     </div>
+     <div class="models">
+      <article class="model featured">
+       <span class="model-label">
+        Ejecución continua
+       </span>
+       <h3>
+        Outsourcing
+       </h3>
+       <p>
+        Resolvo asume tareas y procesos acordados como una extensión de tu equipo.
+       </p>
+       <ul>
+        <li>
+         Soporte operativo recurrente
+        </li>
+        <li>
+         Alcance adaptado a la empresa
+        </li>
+        <li>
+         Coordinación entre disciplinas
+        </li>
+        <li>
+         Continuidad y seguimiento
+        </li>
+       </ul>
+      </article>
+      <article class="model">
+       <span class="model-label">
+        Necesidad específica
+       </span>
+       <h3>
+        Asesoría
+       </h3>
+       <p>
+        Recibe orientación profesional para analizar una situación, tomar una decisión o estructurar un proyecto.
+       </p>
+       <ul>
+        <li>
+         Revisión de un desafío puntual
+        </li>
+        <li>
+         Recomendaciones especializadas
+        </li>
+        <li>
+         Apoyo en cualquiera de nuestras áreas
+        </li>
+        <li>
+         Posibilidad de ampliar el alcance
+        </li>
+       </ul>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="confianza">
+    <div class="wrap credibility">
+     <div aria-label="Representación visual de la gestión coordinada" class="credibility-visual">
+      <div class="visual-card vc1">
+       <strong>
+        Tu empresa
+       </strong>
+       <small>
+        Prioridades y objetivos
+       </small>
+      </div>
+      <div class="visual-card vc2">
+       <strong>
+        Resolvo
+       </strong>
+       <small>
+        Equipo multidisciplinario
+       </small>
+      </div>
+      <div class="visual-card vc3">
+       <strong>
+        Resultado
+       </strong>
+       <small>
+        Gestión más ordenada
+       </small>
+      </div>
+     </div>
+     <div class="credibility-copy">
+      <span class="eyebrow">
+       Una relación de trabajo clara
+      </span>
+      <h2>
+       Profesionales que entienden que detrás de cada tarea hay una decisión de negocio.
+      </h2>
+      <p>
+       No ofrecemos una lista rígida de prestaciones. Escuchamos, ordenamos la necesidad y configuramos una solución coherente con la etapa y estructura de tu empresa.
+      </p>
+      <div class="cred-list">
+       <div class="cred-item">
+        <span>
+         ✓
+        </span>
+        <div>
+         <b>
+          Comunicación directa
+         </b>
+         <p>
+          Un canal claro para coordinar requerimientos, prioridades y avances.
+         </p>
+        </div>
+       </div>
+       <div class="cred-item">
+        <span>
+         ✓
+        </span>
+        <div>
+         <b>
+          Alcance definido
+         </b>
+         <p>
+          Claridad sobre las funciones que ejecuta Resolvo y las que permanecen en tu empresa.
+         </p>
+        </div>
+       </div>
+       <div class="cred-item">
+        <span>
+         ✓
+        </span>
+        <div>
+         <b>
+          Solución adaptable
+         </b>
+         <p>
+          Comienza por un área y amplía el apoyo cuando la operación lo requiera.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section contact" id="contacto">
+    <div class="wrap contact-grid">
+     <div class="contact-copy">
+      <span class="eyebrow">
+       Contacto
+      </span>
+      <h2>
+       Cuéntanos qué está frenando a tu empresa.
+      </h2>
+      <p>
+       Conversemos sobre las tareas, procesos o áreas que hoy necesitan más estructura.
+      </p>
+      <div class="contact-lines">
+       <div class="contact-line">
+        <b>
+         Correo
+        </b>
+        <span>
+         contacto@resolvo.cl
+        </span>
+       </div>
+       <div class="contact-line">
+        <b>
+         Web
+        </b>
+        <span>
+         www.resolvo.cl
+        </span>
+       </div>
+       <div class="contact-line">
+        <b>
+         WhatsApp
+        </b>
+        <a href="https://wa.me/56961033853" rel="noopener" target="_blank">
+         +56 9 6103 3853
+        </a>
+       </div>
+      </div>
+     </div>
+     <form action="https://formspree.io/f/mqpzzdgv" class="form" id="contactForm" method="POST">
+      <div class="form-grid">
+       <div class="field">
+        <label for="name">
+         Nombre
+        </label>
+        <input id="name" name="name" required=""/>
+       </div>
+       <div class="field">
+        <label for="company">
+         Empresa
+        </label>
+        <input id="company" name="company"/>
+       </div>
+       <div class="field">
+        <label for="email">
+         Correo
+        </label>
+        <input id="email" name="email" required="" type="email"/>
+       </div>
+       <div class="field">
+        <label for="phone">
+         Teléfono
+        </label>
+        <input id="phone" name="phone" type="tel"/>
+       </div>
+       <div class="field">
+        <label for="modality">
+         Tipo de apoyo
+        </label>
+        <select id="modality" name="modality">
+         <option value="">
+          Selecciona una opción
+         </option>
+         <option>
+          Outsourcing
+         </option>
+         <option>
+          Asesoría
+         </option>
+         <option>
+          No estoy seguro
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="area">
+         Área principal
+        </label>
+        <select id="area" name="area">
+         <option value="">
+          Selecciona un área
+         </option>
+         <option>
+          Personas y RRHH
+         </option>
+         <option>
+          Finanzas
+         </option>
+         <option>
+          Operaciones
+         </option>
+         <option>
+          Trámites
+         </option>
+         <option>
+          Legal
+         </option>
+         <option>
+          Marketing
+         </option>
+         <option>
+          Varias áreas
+         </option>
+        </select>
+       </div>
+       <div class="field full">
+        <label for="message">
+         ¿Qué necesitas resolver?
+        </label>
+        <textarea id="message" name="message" required=""></textarea>
+       </div>
+      </div>
+      <button class="btn btn-primary submit" type="submit">
+       Solicitar contacto
+      </button>
+      <p class="note">
+       Al enviar este formulario, aceptas ser contactado por Resolvo.
+      </p>
+      <p hidden="" id="formStatus">
+      </p>
+     </form>
+    </div>
+   </section>
+  </main>
+  <a aria-label="WhatsApp" class="whatsapp" href="https://wa.me/56961033853?text=Hola%2C%20quiero%20conversar%20sobre%20las%20necesidades%20de%20gesti%C3%B3n%20de%20mi%20empresa." rel="noopener" target="_blank">
+   <svg fill="currentColor" viewbox="0 0 32 32" width="28">
+    <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.6 4.6 1.8 6.5L4 29l7.7-1.7A12 12 0 1 0 16 3Zm6.9 16.2c-.3.8-1.4 1.5-2.3 1.7-.7.1-1.5.2-4.3-.9-3.5-1.5-5.8-5-6-5.3-.2-.2-1.4-1.9-1.4-3.7 0-1.7.9-2.6 1.2-3 .3-.3.7-.4.9-.4.3 0 .5 0 .7.1.2 0 .5-.1.8.6l1 2.6c.1.2.2.4 0 .7-.1.2-.2.4-.3.6l-.6.6c-.2.2-.4.4-.2.8.2.3.9 1.5 2 2.5 1.4 1.2 2.6 1.6 3 1.8.3.2.6.1.8-.1l1.2-1.4c.2-.4.5-.3.8-.2l2.5 1.2c.4.2.6.3.7.4.1.2.1.9-.2 1.7Z">
+    </path>
+   </svg>
+  </a>
+  <footer>
+   <div class="wrap footer-inner">
+    <a class="brand" href="#inicio">
+     <img alt="Resolvo" src="logo-circulo.png"/>
+    </a>
+    <p>
+     © 2026 Resolvo. Gestión empresarial con enfoque multidisciplinario.
+    </p>
+    <div class="footer-social">
+     <a aria-label="Facebook de Resolvo" href="https://facebook.com/resolvo.cl" rel="noopener" target="_blank">
+      f
+     </a>
+     <a aria-label="Instagram de Resolvo" href="https://instagram.com/resolvo.cl" rel="noopener" target="_blank">
+      ◎
+     </a>
+     <a aria-label="LinkedIn de Resolvo" href="https://linkedin.com/company/resolvo-cl" rel="noopener" target="_blank">
+      in
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   const t=document.getElementById('navToggle'),n=document.getElementById('navLinks');function menu(o){n.classList.toggle('open',o);t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');document.body.classList.toggle('lock',o)}t.onclick=()=>menu(!n.classList.contains('open'));n.querySelectorAll('a').forEach(a=>a.onclick=()=>menu(false));addEventListener('resize',()=>{if(innerWidth>780)menu(false)});const form=document.getElementById('contactForm'),st=document.getElementById('formStatus');form.onsubmit=async e=>{e.preventDefault();const b=form.querySelector('button'),txt=b.textContent;b.disabled=true;b.textContent='Enviando...';st.hidden=true;try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(!r.ok)throw 0;st.textContent='Gracias. Tu solicitud fue enviada correctamente.';st.className='success';form.reset()}catch(x){st.textContent='No fue posible enviar el formulario. Intenta nuevamente o escríbenos por WhatsApp.';st.className='error'}finally{st.hidden=false;b.disabled=false;b.textContent=txt}};
+  </script>
+ </body>
+</html>
+
